@@ -24,10 +24,10 @@
             "value": "Europe/Berlin"
         },
         "ddveUsername": {
-            "value": "nwuser"
+            "value": "sysadmin"
         },
         "ddveVhd": {
-            "value": "AZURE-NVE-19.3.0.6.vhd"
+            "value": "ddve-7.2.0.5-653470.vhd"
         },
         "diagnosticsStorageAccountExistingResourceGroup": {
             "value": "registry"

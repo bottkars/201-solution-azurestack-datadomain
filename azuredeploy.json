@@ -17,7 +17,7 @@
             "type": "securestring",
             "defaultValue": "Change_Me12345_",
             "metadata": {
-                "description": "The password for NVE user."
+                "description": "The password for DDVE user."
             }
         },
         "ddveImageURI": {
@@ -32,14 +32,14 @@
             "defaultValue": "ddveazs1",
             "maxLength": 10,
             "metadata": {
-                "description": "Name of the NVE virtual machine"
+                "description": "Name of the DDVE virtual machine"
             }
         },
         "ddveNetworkInterfaceType": {
             "type": "string",
             "defaultValue": "Public",
             "metadata": {
-                "description": "Do we want to Connect NVE with Public IP ?"
+                "description": "Do we want to Connect DDVE with Public IP ?"
             },
             "allowedValues": [
                 "Public",
@@ -51,7 +51,7 @@
             "type": "securestring",
             "defaultValue": "Change_Me12345_",
             "metadata": {
-                "description": "The password for NVE Settings."
+                "description": "The password for DDVE Settings."
             }
         },
         "ddveTimeZone": {
@@ -459,16 +459,16 @@
         },
         "ddveUsername": {
             "type": "string",
-            "defaultValue": "nwuser",
+            "defaultValue": "sysadmin",
             "metadata": {
-                "description": "The username for NVE."
+                "description": "The username for DDVE."
             }
         },
         "ddveVhd": {
             "type": "string",
-            "defaultValue": "AZURE-NVE-19.3.0.6.vhd",
+            "defaultValue": "ddve-7.2.0.5-653470.vhd",
             "metadata": {
-                "description": "NVE VHD Name"
+                "description": "DDVE VHD Name"
             }
 
         },
@@ -497,14 +497,14 @@
             "type": "string",
             "defaultValue": "harborVNET",
             "metadata": {
-                "description": "The name of the existing Virtual Network that NVE/DDVE will be connected to."
+                "description": "The name of the existing Virtual Network that DDVE will be connected to."
             }
         },
         "vnetSubnetName": {
             "type": "string",
             "defaultValue": "Subnet1",
             "metadata": {
-                "description": "The name of the existing subnet that NVE/DDVE will be connected to."
+                "description": "The name of the existing subnet that DDVE will be connected to."
             }
         }
     },
