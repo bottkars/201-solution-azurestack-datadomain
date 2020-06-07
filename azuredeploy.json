@@ -516,7 +516,7 @@
         "ddveNicName": "[concat(parameters('ddveName'), '-nic-0')]",
         "ddveNsg": "[concat(parameters('ddveName'), '-nsg')]",
         "ddveOSDisk": "[concat(parameters('ddveName'), '-osdisk')]",
-        "numNveDataDisks": 1,
+        "numDdveDataDisks": 1,
         "ddveDataDisk": "[concat(parameters('ddveName'), '-datadisk')]",
         "ddveDataDiskSize": 10,
         "ddvePublicIP": {
@@ -589,7 +589,7 @@
                     "copy": [
                         {
                             "name": "dataDisks",
-                            "count": "[variables('numNveDataDisks')]",
+                            "count": "[variables('numDdveDataDisks')]",
                             "input": {
                                 "caching": "None",
                                 "diskSizeGB": "[variables('ddveDataDiskSize')]",
@@ -838,10 +838,10 @@
                 "parameters": {
                     "customData": {
                         "value": {
-                            "NVE_TIMEZONE": "[parameters('ddveTimeZone')]",
-                            "NVE_COMMON_PASSWORD": "[parameters('ddveCommonPassword')]",
-                            "NVE_PASSWORD": "[reference(variables('ddveNicName')).ipConfigurations[0].properties.privateIPAddress]",
-                            "NVE_EXTERNAL_FQDN": "[if(equals(parameters('ddveNetworkInterfaceType'), 'public'), reference(variables('ddvePublicIPName'),'2017-10-01').dnsSettings.fqdn,'')]",
+                            "DDVE_TIMEZONE": "[parameters('ddveTimeZone')]",
+                            "DDVE_COMMON_PASSWORD": "[parameters('ddveCommonPassword')]",
+                            "DDVE_PASSWORD": "[reference(variables('ddveNicName')).ipConfigurations[0].properties.privateIPAddress]",
+                            "DDVE_EXTERNAL_FQDN": "[if(equals(parameters('ddveNetworkInterfaceType'), 'public'), reference(variables('ddvePublicIPName'),'2017-10-01').dnsSettings.fqdn,'')]",
                             "EXTERNAL_HOSTNAME": "[variables('ddveExternalHostname')]"
                         }
                     }
@@ -854,9 +854,9 @@
     "outputs": {
         "Notes": {
             "type": "string",
-            "value": "NVE Installation System is now running. Please monitor below URL"
+            "value": "DDVE Installation System is now running. Please monitor below URL"
         },
-        "NveUrl": {
+        "DDVEUrl": {
             "type": "string",
             "value": "[concat('https://', reference(variables('ddveNicName')).ipConfigurations[0].properties.privateIPAddress, '/avi')]"
         }
