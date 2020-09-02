@@ -9,7 +9,7 @@
             "value": "Change_Me12345_"
         },
         "ddveImageURI": {
-            "value": "https://opsmanagerimage.blob.local.azurestack.external/images/DDVE/ddve-azure-7.4.0.0-665201/ddve-7.4.0.0-665201.vhd"
+            "value": "https://opsmanagerimage.blob.local.azurestack.external/images/ddve/ddve-azure-7.3.0.5-663138/ddve-7.3.0.5-663138.vhd"
         },
         "ddveName": {
             "value": "ddveazs1"
@@ -24,16 +24,16 @@
             "value": "Europe/Berlin"
         },
         "ddveUsername": {
-            "value": "nwuser"
+            "value": "sysadmin"
         },
         "ddveVhd": {
-            "value": "ddve-7.4.0.0-665201.vhd"
+            "value": "ddve-7.3.0.5-663138.vhd"
         },
         "diagnosticsStorageAccountExistingResourceGroup": {
             "value": "dps_machines"
         },
         "diagnosticsStorageAccountName": {
-            "value": "cdpsmachinesdiag778"
+            "value": "dpsmachinesdiag778"
         },
         "vnetExistingResourceGroup": {
             "value": "dps_machines"

@@ -516,15 +516,15 @@
         "ddveNicName": "[concat(parameters('ddveName'), '-nic-0')]",
         "ddveNsg": "[concat(parameters('ddveName'), '-nsg')]",
         "ddveOSDisk": "[concat(parameters('ddveName'), '-osdisk')]",
-        "numNveDataDisks": 1,
+        "numDDVEDataDisks": 3,
         "ddveDataDisk": "[concat(parameters('ddveName'), '-datadisk')]",
-        "ddveDataDiskSize": 10,
+        "ddveDataDiskSize": 1000,
         "ddvePublicIP": {
             "id": "[resourceId('Microsoft.Network/publicIPAddresses',Concat(variables('ddveNicName'),'-pip'))]"
         },
         "ddvePublicIPName": "[concat(variables('ddveNicName'),'-pip')]",
         "ddveVersion": "[replace(parameters('ddveVhd'),'.vhd', '')]",
-        "ddveVmSize": "Standard_DS3_v2",
+        "ddveVmSize": "Standard_DS4_v2",
         "filesToDownload": [
             "https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/scripts/deploy_base.sh",
             "https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/scripts/configure-ddve-azs.sh"
@@ -589,10 +589,10 @@
                     "copy": [
                         {
                             "name": "dataDisks",
-                            "count": "[variables('numNveDataDisks')]",
+                            "count": "[variables('numDDVEDataDisks')]",
                             "input": {
                                 "caching": "None",
-                                "diskSizeGB": "[variables('ddveDataDiskSize')]",
+                                "diskSizeGB": "[if(equals(copyIndex('dataDisks'),0),10,variables('ddveDataDiskSize'))]",
                                 "lun": "[copyIndex('dataDisks')]",
                                 "name": "[concat(variables('ddveDataDisk'), copyIndex('dataDisks'))]",
                                 "managedDisk": {
@@ -820,7 +820,7 @@
                         "blobUri": "[parameters('ddveImageURI')]",
                         "storageAccountType": "Standard_LRS",
                         "caching": "ReadWrite",
-                        "diskSizeGB": 127
+                        "diskSizeGB": 250
                     }
                 }
             }
@@ -856,7 +856,7 @@
             "type": "string",
             "value": "NVE Installation System is now running. Please monitor below URL"
         },
-        "NveUrl": {
+        "DDVEUrl": {
             "type": "string",
             "value": "[concat('https://', reference(variables('ddveNicName')).ipConfigurations[0].properties.privateIPAddress, '/avi')]"
         }
