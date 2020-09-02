@@ -17,7 +17,7 @@
             "type": "securestring",
             "defaultValue": "Change_Me12345_",
             "metadata": {
-                "description": "The password for NVE user."
+                "description": "The password for DDVE user."
             }
         },
         "ddveImageURI": {
@@ -32,14 +32,14 @@
             "defaultValue": "ddveazs1",
             "maxLength": 10,
             "metadata": {
-                "description": "Name of the NVE virtual machine"
+                "description": "Name of the DDVE virtual machine"
             }
         },
         "ddveNetworkInterfaceType": {
             "type": "string",
             "defaultValue": "Public",
             "metadata": {
-                "description": "Do we want to Connect NVE with Public IP ?"
+                "description": "Do we want to Connect DDVE with Public IP ?"
             },
             "allowedValues": [
                 "Public",
@@ -51,7 +51,7 @@
             "type": "securestring",
             "defaultValue": "Change_Me12345_",
             "metadata": {
-                "description": "The password for NVE Settings."
+                "description": "The password for DDVE Settings."
             }
         },
         "ddveTimeZone": {
@@ -459,16 +459,16 @@
         },
         "ddveUsername": {
             "type": "string",
-            "defaultValue": "nwuser",
+            "defaultValue": "sysadmin",
             "metadata": {
-                "description": "The username for NVE."
+                "description": "The username for DDVE."
             }
         },
         "ddveVhd": {
             "type": "string",
-            "defaultValue": "AZURE-NVE-19.3.0.6.vhd",
+            "defaultValue": "ddve-7.2.0.5-653470.vhd",
             "metadata": {
-                "description": "NVE VHD Name"
+                "description": "DDVE VHD Name"
             }
 
         },
@@ -497,14 +497,14 @@
             "type": "string",
             "defaultValue": "harborVNET",
             "metadata": {
-                "description": "The name of the existing Virtual Network that NVE/DDVE will be connected to."
+                "description": "The name of the existing Virtual Network that DDVE will be connected to."
             }
         },
         "vnetSubnetName": {
             "type": "string",
             "defaultValue": "Subnet1",
             "metadata": {
-                "description": "The name of the existing subnet that NVE/DDVE will be connected to."
+                "description": "The name of the existing subnet that DDVE will be connected to."
             }
         }
     },
@@ -516,7 +516,11 @@
         "ddveNicName": "[concat(parameters('ddveName'), '-nic-0')]",
         "ddveNsg": "[concat(parameters('ddveName'), '-nsg')]",
         "ddveOSDisk": "[concat(parameters('ddveName'), '-osdisk')]",
+<<<<<<< HEAD
         "numDDVEDataDisks": 3,
+=======
+        "numDdveDataDisks": 1,
+>>>>>>> c7a5ca00447474b0d5753bafa53cb3995b211d9d
         "ddveDataDisk": "[concat(parameters('ddveName'), '-datadisk')]",
         "ddveDataDiskSize": 1000,
         "ddvePublicIP": {
@@ -589,7 +593,11 @@
                     "copy": [
                         {
                             "name": "dataDisks",
+<<<<<<< HEAD
                             "count": "[variables('numDDVEDataDisks')]",
+=======
+                            "count": "[variables('numDdveDataDisks')]",
+>>>>>>> c7a5ca00447474b0d5753bafa53cb3995b211d9d
                             "input": {
                                 "caching": "None",
                                 "diskSizeGB": "[if(equals(copyIndex('dataDisks'),0),10,variables('ddveDataDiskSize'))]",
@@ -838,10 +846,10 @@
                 "parameters": {
                     "customData": {
                         "value": {
-                            "NVE_TIMEZONE": "[parameters('ddveTimeZone')]",
-                            "NVE_COMMON_PASSWORD": "[parameters('ddveCommonPassword')]",
-                            "NVE_PASSWORD": "[reference(variables('ddveNicName')).ipConfigurations[0].properties.privateIPAddress]",
-                            "NVE_EXTERNAL_FQDN": "[if(equals(parameters('ddveNetworkInterfaceType'), 'public'), reference(variables('ddvePublicIPName'),'2017-10-01').dnsSettings.fqdn,'')]",
+                            "DDVE_TIMEZONE": "[parameters('ddveTimeZone')]",
+                            "DDVE_COMMON_PASSWORD": "[parameters('ddveCommonPassword')]",
+                            "DDVE_PASSWORD": "[reference(variables('ddveNicName')).ipConfigurations[0].properties.privateIPAddress]",
+                            "DDVE_EXTERNAL_FQDN": "[if(equals(parameters('ddveNetworkInterfaceType'), 'public'), reference(variables('ddvePublicIPName'),'2017-10-01').dnsSettings.fqdn,'')]",
                             "EXTERNAL_HOSTNAME": "[variables('ddveExternalHostname')]"
                         }
                     }
@@ -854,7 +862,7 @@
     "outputs": {
         "Notes": {
             "type": "string",
-            "value": "NVE Installation System is now running. Please monitor below URL"
+            "value": "DDVE Installation System is now running. Please monitor below URL"
         },
         "DDVEUrl": {
             "type": "string",

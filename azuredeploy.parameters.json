@@ -27,7 +27,11 @@
             "value": "sysadmin"
         },
         "ddveVhd": {
+<<<<<<< HEAD
             "value": "ddve-7.3.0.5-663138.vhd"
+=======
+            "value": "ddve-7.2.0.5-653470.vhd"
+>>>>>>> c7a5ca00447474b0d5753bafa53cb3995b211d9d
         },
         "diagnosticsStorageAccountExistingResourceGroup": {
             "value": "dps_machines"
