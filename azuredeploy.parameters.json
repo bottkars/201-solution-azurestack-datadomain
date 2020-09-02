@@ -9,7 +9,7 @@
             "value": "Change_Me12345_"
         },
         "ddveImageURI": {
-            "value": "https://opsmanagerimage.blob.local.azurestack.external/images/ddve-50-ver-7200/ddve-7.2.0.5-653470.vhd"
+            "value": "https://opsmanagerimage.blob.local.azurestack.external/images/DDVE/ddve-azure-7.4.0.0-665201/ddve-7.4.0.0-665201.vhd"
         },
         "ddveName": {
             "value": "ddveazs1"
@@ -27,22 +27,22 @@
             "value": "nwuser"
         },
         "ddveVhd": {
-            "value": "AZURE-NVE-19.3.0.6.vhd"
+            "value": "ddve-7.4.0.0-665201.vhd"
         },
         "diagnosticsStorageAccountExistingResourceGroup": {
-            "value": "registry"
+            "value": "dps_machines"
         },
         "diagnosticsStorageAccountName": {
-            "value": "ckboxhxdal63isalinuxvm"
+            "value": "cdpsmachinesdiag778"
         },
         "vnetExistingResourceGroup": {
-            "value": "registry"
+            "value": "dps_machines"
         },
         "vnetName": {
-            "value": "harborVNET"
+            "value": "dps_machines-vnet"
         },
         "vnetSubnetName": {
-            "value": "Subnet1"
+            "value": "default"
         }
     }
 }
