@@ -516,11 +516,7 @@
         "ddveNicName": "[concat(parameters('ddveName'), '-nic-0')]",
         "ddveNsg": "[concat(parameters('ddveName'), '-nsg')]",
         "ddveOSDisk": "[concat(parameters('ddveName'), '-osdisk')]",
-<<<<<<< HEAD
         "numDDVEDataDisks": 3,
-=======
-        "numDdveDataDisks": 1,
->>>>>>> c7a5ca00447474b0d5753bafa53cb3995b211d9d
         "ddveDataDisk": "[concat(parameters('ddveName'), '-datadisk')]",
         "ddveDataDiskSize": 1000,
         "ddvePublicIP": {
@@ -593,11 +589,8 @@
                     "copy": [
                         {
                             "name": "dataDisks",
-<<<<<<< HEAD
                             "count": "[variables('numDDVEDataDisks')]",
-=======
-                            "count": "[variables('numDdveDataDisks')]",
->>>>>>> c7a5ca00447474b0d5753bafa53cb3995b211d9d
+
                             "input": {
                                 "caching": "None",
                                 "diskSizeGB": "[if(equals(copyIndex('dataDisks'),0),10,variables('ddveDataDiskSize'))]",
