@@ -528,7 +528,7 @@
             "ssh": {
                 "publicKeys": [
                     {
-                        "path": "[concat('/home/', parameters('ddveUserName'), '/.ssh/authorized_keys')]",
+                        "path": "[concat('/home/', variables('ddveUserName'), '/.ssh/authorized_keys')]",
                         "keyData": "[parameters('ddvePasswordOrKey')]"
                     }
                 ]
@@ -553,7 +553,7 @@
                     "timestamp": 2
                 },
                 "protectedSettings": {
-                    "commandToExecute": "[concat('bash -l -c \"./deploy_base.sh 2>&1 | tee /home/', parameters('ddveUserName'), '/install.log\"')]"
+                    "commandToExecute": "[concat('/sbin/bash -l -c \"./deploy_base.sh 2>&1 | tee /home/', variables('ddveUserName'), '/install.log\"')]"
                 }
             },
             "dependsOn": [

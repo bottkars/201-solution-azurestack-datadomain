@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "authenticationType": {
+            "value": "password"
+        },
+        "ddveCommonPassword": {
+            "value": "Change_Me12345_"
+        },
+        "ddveImageURI": {
+            "value": "https://opsmanagerimage.blob.local.azurestack.external/images/ddve-50-ver-7200/ddve-7.2.0.5-653470.vhd"
+        },
+        "ddveName": {
+            "value": "ddveazs1"
+        },
+        "ddveNetworkInterfaceType": {
+            "value": "Public"
+        },
+        "ddvePasswordOrKey": {
+            "value": "Change_Me12345_"
+        },
+        "ddveTimeZone": {
+            "value": "Europe/Berlin"
+        },
+        "ddveVhd": {
+            "value": "ddve-7.2.0.5-653470.vhd"
+        },
+        "diagnosticsStorageAccountExistingResourceGroup": {
+            "value": "registry"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "ckboxhxdal63isalinuxvm"
+        },
+        "vnetExistingResourceGroup": {
+            "value": "registry"
+        },
+        "vnetName": {
+            "value": "harborVNET"
+        },
+        "vnetSubnetName": {
+            "value": "Subnet1"
+        }
+    }
+}
