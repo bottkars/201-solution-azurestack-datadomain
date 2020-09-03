@@ -457,13 +457,6 @@
                 "description": "Timezone for Avamar Appliance"
             }
         },
-        "ddveUsername": {
-            "type": "string",
-            "defaultValue": "sysadmin",
-            "metadata": {
-                "description": "The username for DDVE."
-            }
-        },
         "ddveVhd": {
             "type": "string",
             "defaultValue": "ddve-7.2.0.5-653470.vhd",
@@ -510,6 +503,7 @@
     },
     "variables": {
         "apiVersion": "2017-06-01",
+        "ddveUsername": "sysadmin",
         "ddvePassword": "changeme",
         "ddveExternalHostname": "node",
         "ddveIPAllocationMethod": "Static",
@@ -530,7 +524,7 @@
             "https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/scripts/configure-ddve-azs.sh"
         ],
         "linuxConfiguration": {
-            "disablePasswordAuthentication": true,
+            "disablePasswordAuthentication": false,
             "ssh": {
                 "publicKeys": [
                     {
@@ -606,8 +600,8 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('ddveName')]",
-                    "adminUsername": "[parameters('ddveUserName')]",
-                    "adminPassword": "[parameters('ddvePasswordOrKey')]",
+                    "adminUsername": "[variables('ddveUserName')]",
+                    "adminPassword": "[variables('ddvePassword')]",
                     "customData": "[reference('Microsoft.Resources/deployments/generate-customdata', '2015-01-01').outputs.customData.value]",
                     "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
                 },
