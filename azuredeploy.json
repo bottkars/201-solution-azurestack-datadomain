@@ -504,7 +504,7 @@
     "variables": {
         "apiVersion": "2017-06-01",
         "ddveUsername": "sysadmin",
-        "ddvePassword": "changeme",
+        "ddvePassword": "Change_Me12345_",
         "ddveExternalHostname": "node",
         "ddveIPAllocationMethod": "Static",
         "ddveNicName": "[concat(parameters('ddveName'), '-nic-0')]",
