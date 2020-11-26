@@ -6,7 +6,7 @@
             "value": "password"
         },
         "ddveCommonPassword": {
-            "value": "Change_Me12345_"
+            "value": "Password123!"
         },
         "ddveImageURI": {
             "value": "https://opsmanagerimage.blob.local.azurestack.external/images/powerprotectdd/ddve-azure-7.4.0.5-670852/ddve-7.4.0.5-670852.vhd"
@@ -18,7 +18,7 @@
             "value": "Public"
         },
         "ddvePasswordOrKey": {
-            "value": "Change_Me12345_"
+            "value": "Password123!"
         },
         "ddveTimeZone": {
             "value": "Europe/Berlin"
