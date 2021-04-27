@@ -92,8 +92,8 @@ az deployment group create  \
 
 
 
-## GitOps
-``
+## direnv GitOps from Repo
+```
 az group create --name ${AZS_RESOURCE_GROUP} \
   --location ${AZS_LOCATION}
 
@@ -104,6 +104,18 @@ az deployment group create  \
 --parameters ddveImageURI=${AZS_IMAGE_URI} \
 --resource-group ${AZS_RESOURCE_GROUP}
 ```
+
+## direnv GitOps locally
+```
+az deployment group create  \
+--template-file ${HOME}/workspace/201-solution-azurestack-datadomain/azuredeploy.json \
+--parameters ${HOME}/workspace//201-solution-azurestack-datadomain/azuredeploy.parameters.json \
+--parameters ddveName=${AZS_HOSTNAME} \
+--parameters ddveImageURI=${AZS_IMAGE_URI} \
+--resource-group ${AZS_RESOURCE_GROUP}
+```
+
+
 
 delete
 

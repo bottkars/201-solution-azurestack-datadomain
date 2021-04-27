@@ -636,7 +636,7 @@
                         "properties": {
                             "protocol": "TCP",
                             "sourcePortRange": "*",
-                            "destinationPortRange": "9000-9001",
+                            "destinationPortRange": "2049",
                             "sourceAddressPrefix": "*",
                             "destinationAddressPrefix": "*",
                             "access": "Allow",
@@ -653,7 +653,7 @@
                         "properties": {
                             "protocol": "TCP",
                             "sourcePortRange": "*",
-                            "destinationPortRange": "8080",
+                            "destinationPortRange": "2051",
                             "sourceAddressPrefix": "*",
                             "destinationAddressPrefix": "*",
                             "access": "Allow",
@@ -687,7 +687,7 @@
                         "properties": {
                             "protocol": "TCP",
                             "sourcePortRange": "*",
-                            "destinationPortRange": "9090",
+                            "destinationPortRange": "3009",
                             "sourceAddressPrefix": "*",
                             "destinationAddressPrefix": "*",
                             "access": "Allow",
@@ -709,23 +709,6 @@
                             "destinationAddressPrefix": "*",
                             "access": "Allow",
                             "priority": 1100,
-                            "direction": "Inbound",
-                            "sourceAddressPrefixes": [
-                            ],
-                            "destinationAddressPrefixes": [
-                            ]
-                        }
-                    },
-                    {
-                        "name": "TCP_inbound_rule_6",
-                        "properties": {
-                            "protocol": "TCP",
-                            "sourcePortRange": "*",
-                            "destinationPortRange": "7937-7954",
-                            "sourceAddressPrefix": "*",
-                            "destinationAddressPrefix": "*",
-                            "access": "Allow",
-                            "priority": 1150,
                             "direction": "Inbound",
                             "sourceAddressPrefixes": [
                             ],
