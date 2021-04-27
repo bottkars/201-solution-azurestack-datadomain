@@ -1,4 +1,4 @@
-﻿# 201-solution-azurestack-networker
+﻿# 201-solution-azurestack-datadomain
 
 This Template Deploys and Configures DEL|EMC Avamar Virtual Edition onto Azurestack
 
@@ -92,7 +92,7 @@ az deployment group create  \
 
 
 
-# GitOps
+## GitOps
 ``
 az group create --name ${AZS_RESOURCE_GROUP} \
   --location ${AZS_LOCATION}
