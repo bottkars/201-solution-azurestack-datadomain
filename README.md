@@ -62,8 +62,8 @@ az group delete --name ddve_from_cli  -y
 ```
 
 
-
-``àzurecli-interactive
+# GitOps
+```àzurecli-interactive
 
 az group create --name ${AZS_RESOURCE_GROUP} \
   --location ${AZS_LOCATION}
