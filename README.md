@@ -3,20 +3,16 @@
 This Template Deploys and Configures DEL|EMC Avamar Virtual Edition onto Azurestack
 
 Prework and Requirements:
-  -  Have Custom Script for Linux extensions Available on AzureStackHub
-  -  Upload DDVE VHD for Azure* to Blob in Subscription
+  - Prepare a DDVE AzureStack VHD from Hyper-V  vhd Image
+  - Upload DDVE VHD for Azure* to Blob in Subscription
 
 
-## Prepare the vhd from the Azure Source
-get the source package for ddve-azure.
+## Prepare the vhd from the Hyper-V Source
+get the source package for ddve-hyper-v
 make sure vi  azure-metadata.sh provides you a valid machine type for /boot/.instance_type
-
-
-
 
 ## Prepare the vhd to become fixed size
 ```bash
-
 ddrelease=ddve-7.6.0.5-685135
 rawdisk="${ddrelease}.raw"
 vhddisk="${ddrelease}.vhd"
@@ -38,7 +34,7 @@ azcopy cp ./ddve-7.4.0.5-670852.vhd \
 
 
 # or
-azcopy  copy --recursive /you/file/directory/ddve https://your.atzurestack.image.blob/container<sastoken>
+azcopy  copy --recursive /you/file/directory/ddve https://your.azurestack.image.blob/container<sastoken>
 ddve-azure-7.4.0.0-665201/ddve-7.4.0.0-665201.vhd
 ```
 AZ CLI Deployment Example:
