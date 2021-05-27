@@ -118,5 +118,5 @@ az deployment group create  \
 delete
 
 ```azurecli-interactive
-az group delete --name ddve_from_cli  -y
+az group delete --name {AZS_RESOURCE_GROUP}  -y
 ```
