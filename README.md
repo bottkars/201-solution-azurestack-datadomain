@@ -16,8 +16,10 @@ make sure vi  azure-metadata.sh provides you a valid machine type for /boot/.ins
 
 ## Prepare the vhd to become fixed size
 ```bash
-rawdisk="ddve-7.4.0.5-670852.raw"
-vhddisk="ddve-7.4.0.5-670852.vhd"
+
+ddrelease=ddve-hyperv-7.6.0.5-685135
+rawdisk="${ddrelease}.raw"
+vhddisk="${ddrelease}.vhd"
 qemu-img convert -f vpc -O raw $vhddisk $rawdisk
 MB=$((1024*1024))
 size=$(qemu-img info -f raw --output json "$rawdisk" | \
