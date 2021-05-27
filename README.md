@@ -100,6 +100,10 @@ az deployment group create  \
 --parameters https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/azuredeploy.parameters.json \
 --parameters ddveName=${AZS_HOSTNAME} \
 --parameters ddveImageURI=${AZS_IMAGE_URI} \
+--parameters diagnosticsStorageAccountExistingResourceGroup=${AZS_diagnosticsStorageAccountExistingResourceGroup} \
+--parameters diagnosticsStorageAccountName=${AZS_diagnosticsStorageAccountName} \
+--parameters vnetName=${AZS_vnetName} \
+--parameters vnetSubnetName=${AZS_vnetSubnetName} \
 --resource-group ${AZS_RESOURCE_GROUP}
 ```
 
