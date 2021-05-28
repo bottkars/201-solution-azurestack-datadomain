@@ -465,6 +465,17 @@
             }
 
         },
+        "vmSize": {
+            "type": "string",
+            "defaultValue":"Standard_DS4_v2",
+            "allowedValues": [
+                "Standard_DS4_v2",
+                "Standard_D4_v2",
+                "Standard_F8",
+                "Standard_F8s",
+                "Standard_D16_v3"
+                ]
+        },
         "diagnosticsStorageAccountExistingResourceGroup": {
             "type": "string",
             "defaultValue": "registry",
@@ -506,6 +517,7 @@
         "ddveUsername": "sysadmin",
         "ddvePassword": "Change_Me12345_",
         "ddveIPAllocationMethod": "Static",
+        "ddveVmSize": "[parameters('vmSize')]",
         "ddveNicName": "[concat(parameters('ddveName'), '-nic-0')]",
         "ddveNsg": "[concat(parameters('ddveName'), '-nsg')]",
         "ddveOSDisk": "[concat(parameters('ddveName'), '-osdisk')]",
@@ -517,7 +529,7 @@
         },
         "ddvePublicIPName": "[concat(variables('ddveNicName'),'-pip')]",
         "ddveVersion": "[replace(parameters('ddveVhd'),'.vhd', '')]",
-        "ddveVmSize": "Standard_DS4_v2",
+        
         "linuxConfiguration": {
             "disablePasswordAuthentication": false,
             "ssh": {
