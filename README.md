@@ -124,6 +124,7 @@ az deployment group create  \
 --parameters diagnosticsStorageAccountName=${AZS_diagnosticsStorageAccountName:?variable is empty} \
 --parameters vnetName=${AZS_vnetName:?variable is empty} \
 --parameters vnetSubnetName=${AZS_vnetSubnetName:?variable is empty} \
+--parameters vmSize=Standard_D16_v3 \
 --resource-group ${AZS_RESOURCE_GROUP:?variable is empty}
 ```
 
