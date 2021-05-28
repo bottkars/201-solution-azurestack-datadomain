@@ -91,6 +91,26 @@ az deployment group create  \
 
 
 ## direnv GitOps from Repo
+
+
+Validate
+```
+az group create --name ${AZS_RESOURCE_GROUP} \
+  --location ${AZS_LOCATION}
+
+az deployment group validate  \
+--template-uri https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/azuredeploy.json \
+--parameters https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/azuredeploy.parameters.json \
+--parameters ddveName=${AZS_HOSTNAME:?variable is empty} \
+--parameters ddveImageURI=${AZS_IMAGE_URI:?variable is empty} \
+--parameters diagnosticsStorageAccountExistingResourceGroup=${AZS_diagnosticsStorageAccountExistingResourceGroup:?variable is empty} \
+--parameters diagnosticsStorageAccountName=${AZS_diagnosticsStorageAccountName:?variable is empty} \
+--parameters vnetName=${AZS_vnetName:?variable is empty} \
+--parameters vnetSubnetName=${AZS_vnetSubnetName:?variable is empty} \
+--resource-group ${AZS_RESOURCE_GROUP:?variable is empty}
+```
+
+Deploy
 ```
 az group create --name ${AZS_RESOURCE_GROUP} \
   --location ${AZS_LOCATION}
@@ -98,13 +118,13 @@ az group create --name ${AZS_RESOURCE_GROUP} \
 az deployment group create  \
 --template-uri https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/azuredeploy.json \
 --parameters https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/azuredeploy.parameters.json \
---parameters ddveName=${AZS_HOSTNAME} \
---parameters ddveImageURI=${AZS_IMAGE_URI} \
---parameters diagnosticsStorageAccountExistingResourceGroup=${AZS_diagnosticsStorageAccountExistingResourceGroup} \
---parameters diagnosticsStorageAccountName=${AZS_diagnosticsStorageAccountName} \
---parameters vnetName=${AZS_vnetName} \
---parameters vnetSubnetName=${AZS_vnetSubnetName} \
---resource-group ${AZS_RESOURCE_GROUP}
+--parameters ddveName=${AZS_HOSTNAME:?variable is empty} \
+--parameters ddveImageURI=${AZS_IMAGE_URI:?variable is empty} \
+--parameters diagnosticsStorageAccountExistingResourceGroup=${AZS_diagnosticsStorageAccountExistingResourceGroup:?variable is empty} \
+--parameters diagnosticsStorageAccountName=${AZS_diagnosticsStorageAccountName:?variable is empty} \
+--parameters vnetName=${AZS_vnetName:?variable is empty} \
+--parameters vnetSubnetName=${AZS_vnetSubnetName:?variable is empty} \
+--resource-group ${AZS_RESOURCE_GROUP:?variable is empty}
 ```
 
 ## direnv GitOps locally
