@@ -13,7 +13,7 @@ make sure vi  azure-metadata.sh provides you a valid machine type for /boot/.ins
 
 ## Prepare the vhd to become fixed size
 ```bash
-ddrelease=ddve-7.6.0.5-685135
+ddrelease=ddve-7.8.0.0-1008134
 rawdisk="${ddrelease}.raw"
 vhddisk="${ddrelease}.vhd"
 qemu-img convert -f vpc -O raw $vhddisk $rawdisk
@@ -29,8 +29,8 @@ qemu-img convert -f raw -o subformat=fixed,force_size -O vpc $rawdisk $vhddisk
 ```bash
 SAS_TOKEN=<you sas token>
 export AZCOPY_DEFAULT_SERVICE_API_VERSION=2017-11-09
-azcopy cp ./ddve-7.4.0.5-670852.vhd \
-"https://opsmanagerimage.blob.local.azurestack.external/images/powerprotectdd/ddve-azure-7.4.0.5-670852/ddve-7.4.0.5-670852.vhd$SAS_TOKEN"
+azcopy cp ./${ddrelease}.vhd \
+"https://opsmanagerimage.blob.local.azurestack.external/images/powerprotectdd/${ddrelease}/${ddrelease}.vhd$SAS_TOKEN"
 
 
 # or
