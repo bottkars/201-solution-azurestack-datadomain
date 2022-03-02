@@ -1,4 +1,4 @@
-﻿# 201-solution-azurestack-datadomain
+# 201-solution-azurestack-datadomain
 
 This Template Deploys and Configures DEL|EMC Avamar Virtual Edition onto Azurestack
 
