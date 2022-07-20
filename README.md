@@ -103,6 +103,7 @@ az deployment group validate  \
 --parameters https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/azuredeploy.parameters.json \
 --parameters ddveName=${AZS_HOSTNAME:?variable is empty} \
 --parameters ddveImageURI=${AZS_IMAGE_URI:?variable is empty} \
+--parameters ddveVhd=${AZS_IMAGE:?variable is empty} \
 --parameters diagnosticsStorageAccountExistingResourceGroup=${AZS_diagnosticsStorageAccountExistingResourceGroup:?variable is empty} \
 --parameters diagnosticsStorageAccountName=${AZS_diagnosticsStorageAccountName:?variable is empty} \
 --parameters vnetName=${AZS_vnetName:?variable is empty} \
@@ -120,6 +121,7 @@ az deployment group create  \
 --parameters https://raw.githubusercontent.com/bottkars/201-solution-azurestack-datadomain/master/azuredeploy.parameters.json \
 --parameters ddveName=${AZS_HOSTNAME:?variable is empty} \
 --parameters ddveImageURI=${AZS_IMAGE_URI:?variable is empty} \
+--parameters ddveVhd=${AZS_IMAGE:?variable is empty} \
 --parameters diagnosticsStorageAccountExistingResourceGroup=${AZS_diagnosticsStorageAccountExistingResourceGroup:?variable is empty} \
 --parameters diagnosticsStorageAccountName=${AZS_diagnosticsStorageAccountName:?variable is empty} \
 --parameters vnetName=${AZS_vnetName:?variable is empty} \
